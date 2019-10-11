@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>python异常处理 | Song Di</title>
+    <meta name="description" content="Learning Something .">
+    <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.32abe013.css" as="style"><link rel="preload" href="/assets/js/app.aab2e043.js" as="script"><link rel="preload" href="/assets/js/4.a2f23fc0.js" as="script"><link rel="preload" href="/assets/js/1.f41c97e0.js" as="script"><link rel="preload" href="/assets/js/36.a52b02e1.js" as="script"><link rel="prefetch" href="/assets/js/10.d91ec914.js"><link rel="prefetch" href="/assets/js/11.550449f0.js"><link rel="prefetch" href="/assets/js/12.25635e0d.js"><link rel="prefetch" href="/assets/js/13.8d53457a.js"><link rel="prefetch" href="/assets/js/14.1a52212c.js"><link rel="prefetch" href="/assets/js/15.568ec84d.js"><link rel="prefetch" href="/assets/js/16.b7e3e311.js"><link rel="prefetch" href="/assets/js/17.917cdf1c.js"><link rel="prefetch" href="/assets/js/18.358f4651.js"><link rel="prefetch" href="/assets/js/19.964d1b37.js"><link rel="prefetch" href="/assets/js/20.3cb39a62.js"><link rel="prefetch" href="/assets/js/21.dd03c019.js"><link rel="prefetch" href="/assets/js/22.04f00787.js"><link rel="prefetch" href="/assets/js/23.69030ecf.js"><link rel="prefetch" href="/assets/js/24.6f80e0b7.js"><link rel="prefetch" href="/assets/js/25.4efe4c2c.js"><link rel="prefetch" href="/assets/js/26.f3c1027b.js"><link rel="prefetch" href="/assets/js/27.ada57397.js"><link rel="prefetch" href="/assets/js/28.e433c184.js"><link rel="prefetch" href="/assets/js/29.41956688.js"><link rel="prefetch" href="/assets/js/30.f8aea55c.js"><link rel="prefetch" href="/assets/js/31.ba3a4a42.js"><link rel="prefetch" href="/assets/js/32.ef5442ac.js"><link rel="prefetch" href="/assets/js/33.abb3d556.js"><link rel="prefetch" href="/assets/js/34.c9d24849.js"><link rel="prefetch" href="/assets/js/35.fcde76ec.js"><link rel="prefetch" href="/assets/js/37.a9af78bb.js"><link rel="prefetch" href="/assets/js/38.3b48abf2.js"><link rel="prefetch" href="/assets/js/39.2245d9e9.js"><link rel="prefetch" href="/assets/js/40.1dbeb94d.js"><link rel="prefetch" href="/assets/js/41.71eb90be.js"><link rel="prefetch" href="/assets/js/42.aa5924d8.js"><link rel="prefetch" href="/assets/js/43.1db5ea99.js"><link rel="prefetch" href="/assets/js/44.f50e971f.js"><link rel="prefetch" href="/assets/js/45.eb7bd2fd.js"><link rel="prefetch" href="/assets/js/5.4cc2d397.js"><link rel="prefetch" href="/assets/js/6.847b890c.js"><link rel="prefetch" href="/assets/js/7.f77301b3.js"><link rel="prefetch" href="/assets/js/8.4130173d.js"><link rel="prefetch" href="/assets/js/9.a7dc4e78.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.8b30b4f0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.32abe013.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container"><div><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/head.png" alt="Song Di" class="logo"> <span class="site-name">Song Di</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><!----> <div class="dark-theme-options toggle-option"><label for="dark-theme-toggle">Enable Dark Theme?</label> <input id="dark-theme-toggle" type="checkbox" checked="checked"></div></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/category/论文笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/category/论文排版.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文排版
+</a></li><li class="dropdown-item"><!----> <a href="/category/读书.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书
+</a></li><li class="dropdown-item"><!----> <a href="/category/电影.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/category/美剧.html" class="nav-link"><i class="iconfont undefined"></i>
+  美剧
+</a></li><li class="dropdown-item"><!----> <a href="/category/编程语言.html" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/category/leetcode.html" class="nav-link"><i class="iconfont undefined"></i>
+  leetcode
+</a></li><li class="dropdown-item"><!----> <a href="/category/启发式算法.html" class="nav-link"><i class="iconfont undefined"></i>
+  启发式算法
+</a></li><li class="dropdown-item"><!----> <a href="/category/算法导论.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法导论
+</a></li><li class="dropdown-item"><!----> <a href="/category/外语.html" class="nav-link"><i class="iconfont undefined"></i>
+  外语
+</a></li><li class="dropdown-item"><!----> <a href="/category/经验.html" class="nav-link"><i class="iconfont undefined"></i>
+  经验
+</a></li><li class="dropdown-item"><!----> <a href="/category/面试.html" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/category/课程笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  课程笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  归档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TINADD" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/tina-67-56/activities" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/category/论文笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/category/论文排版.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文排版
+</a></li><li class="dropdown-item"><!----> <a href="/category/读书.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书
+</a></li><li class="dropdown-item"><!----> <a href="/category/电影.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/category/美剧.html" class="nav-link"><i class="iconfont undefined"></i>
+  美剧
+</a></li><li class="dropdown-item"><!----> <a href="/category/编程语言.html" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/category/leetcode.html" class="nav-link"><i class="iconfont undefined"></i>
+  leetcode
+</a></li><li class="dropdown-item"><!----> <a href="/category/启发式算法.html" class="nav-link"><i class="iconfont undefined"></i>
+  启发式算法
+</a></li><li class="dropdown-item"><!----> <a href="/category/算法导论.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法导论
+</a></li><li class="dropdown-item"><!----> <a href="/category/外语.html" class="nav-link"><i class="iconfont undefined"></i>
+  外语
+</a></li><li class="dropdown-item"><!----> <a href="/category/经验.html" class="nav-link"><i class="iconfont undefined"></i>
+  经验
+</a></li><li class="dropdown-item"><!----> <a href="/category/面试.html" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/category/课程笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  课程笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  归档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TINADD" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/tina-67-56/activities" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>python异常处理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/technology/python/python_%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#使用except而带多种异常类型" class="sidebar-link">使用except而带多种异常类型</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/technology/python/python_%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#try-finally-语句" class="sidebar-link">try-finally 语句</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/technology/python/python_%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#异常的参数" class="sidebar-link">异常的参数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/technology/python/python_%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#触发异常" class="sidebar-link">触发异常</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page reco-hide"> <div class="page-title"><h1>python异常处理</h1> <hr> <div data-v-362e684e><i class="iconfont reco-account" data-v-362e684e><span data-v-362e684e>Candy</span></i> <i class="iconfont reco-date" data-v-362e684e><span data-v-362e684e>2019-9-2</span></i> <!----> <i class="iconfont reco-tag tags" data-v-362e684e><span class="tag-item" data-v-362e684e>
+      python
+    </span></i></div></div> <div class="content__default"><p>python提供了两个非常重要的功能**（异常处理、断言）**来处理python程序在运行中出现的异常和错误，可以使用该功能来调试python程序。</p> <p><strong>异常处理</strong></p> <p>捕捉异常可以使用<strong>try/except</strong>语句。</p> <p><strong>try/except</strong>语句用来检测<strong>try语句块中的错误</strong>，从而让<strong>except</strong>语句<strong>捕获</strong>异常信息并处理。</p> <p>如果你不想在异常发生时结束你的程序，只需在try里捕获它。</p> <p>以下为简单的<em>try....except...else</em>的语法：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>try:
+&lt;语句&gt;        #运行别的代码
+except &lt;名字&gt;：
+&lt;语句&gt;        #如果在try部份引发了'name'异常
+except &lt;名字&gt;，&lt;数据&gt;:
+&lt;语句&gt;        #如果引发了'name'异常，获得附加的数据
+else:
+&lt;语句&gt;        #如果没有异常发生
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h6 id="try的工作原理"><a href="#try的工作原理" aria-hidden="true" class="header-anchor">#</a> try的工作原理</h6> <p>当开始一个try语句后，python就在当前程序的上下文中作标记，这样当异常出现时就可以回到这里，try子句先执行，接下来会发生什么依赖于执行时是否出现异常。</p> <ul><li>如果当try后的语句执行时发生异常，python就跳回到try并执行第一个匹配该异常的except子句，异常处理完毕，控制流就通过整个try语句（除非在处理异常时又引发新的异常）。</li> <li>如果在try后的语句里发生了异常，却没有匹配的except子句，异常将被递交到上层的try，或者到程序的最上层（这样将结束程序，并打印默认的出错信息）。</li> <li>如果在try子句执行时没有发生异常，python将执行else语句后的语句（如果有else的话），然后控制流通过整个try语句。</li></ul> <p><strong>使用except而不带任何异常类型</strong></p> <p>你可以不带任何异常类型使用except，如下实例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>try:
+    正常的操作
+   ......................
+except:
+    发生异常，执行这块代码
+   ......................
+else:
+    如果没有异常执行这块代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>以上方式try-except语句捕获所有发生的异常。但这不是一个很好的方式，我们不能通过该程序识别出具体的异常信息。因为它捕获所有的异常。</strong></p> <h2 id="使用except而带多种异常类型"><a href="#使用except而带多种异常类型" aria-hidden="true" class="header-anchor">#</a> 使用except而带多种异常类型</h2> <p>也可以使用相同的except语句来处理多个异常信息，如下所示：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>try:
+    正常的操作
+   ......................
+except(Exception1[, Exception2[,...ExceptionN]]]):
+   发生以上多个异常中的一个，执行这块代码
+   ......................
+else:
+    如果没有异常执行这块代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="try-finally-语句"><a href="#try-finally-语句" aria-hidden="true" class="header-anchor">#</a> try-finally 语句</h2> <p>try-finally 语句无论是否发生异常都将执行最后的代码。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>try:
+&lt;语句&gt;
+finally:
+&lt;语句&gt;    #退出try时总会执行
+raise
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="异常的参数"><a href="#异常的参数" aria-hidden="true" class="header-anchor">#</a> 异常的参数</h2> <p>一个异常可以带上参数，可作为输出的异常信息参数。</p> <p>你可以通过except语句来捕获异常的参数，如下所示：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>try:
+    正常的操作
+   ......................
+except ExceptionType, Argument:
+    你可以在这输出 Argument 的值...
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="触发异常"><a href="#触发异常" aria-hidden="true" class="header-anchor">#</a> 触发异常</h3> <p>我们可以使用raise语句自己触发异常</p> <p>raise语法格式如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>raise [Exception [, args [, traceback]]] 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>语句中 Exception 是异常的类型（例如，NameError）参数标准异常中任一种，args 是自已提供的异常参数。</p> <p>最后一个参数是可选的（在实践中很少使用），如果存在，是跟踪异常对象。</p> <p>内置异常类的层次结构如下：</p> <pre><code> BaseException  # 所有异常的基类
+
+ +-- SystemExit  # 解释器请求退出
+
+ +-- KeyboardInterrupt  # 用户中断执行(通常是输入^C)
+
+ +-- GeneratorExit  # 生成器(generator)发生异常来通知退出
+
+ +-- Exception  # 常规异常的基类
+ 
+ +-- StopIteration  # 迭代器没有更多的值
+
+  +-- StopAsyncIteration  # 必须通过异步迭代器对象的__anext__()方法引发以停止迭代
+
+  +-- ArithmeticError  # 各种算术错误引发的内置异常的基类
+
+  |    +-- FloatingPointError  # 浮点计算错误
+
+  |    +-- OverflowError  # 数值运算结果太大无法表示
+
+  |    +-- ZeroDivisionError  # 除(或取模)零 (所有数据类型)
+
+  +-- AssertionError  # 当assert语句失败时引发
+
+  +-- AttributeError  # 属性引用或赋值失败
+
+  +-- BufferError  # 无法执行与缓冲区相关的操作时引发
+
+  +-- EOFError  # 当input()函数在没有读取任何数据的情况下达到文件结束条件(EOF)时引发
+
+  +-- ImportError  # 导入模块/对象失败
+
+  |    +-- ModuleNotFoundError  # 无法找到模块或在在sys.modules中找到None
+
+  +-- LookupError  # 映射或序列上使用的键或索引无效时引发的异常的基类
+
+  |    +-- IndexError  # 序列中没有此索引(index)
+
+  |    +-- KeyError  # 映射中没有这个键
+
+  +-- MemoryError  # 内存溢出错误(对于Python 解释器不是致命的)
+
+  +-- NameError  # 未声明/初始化对象 (没有属性)
+
+  |    +-- UnboundLocalError  # 访问未初始化的本地变量
+
+  +-- OSError  # 操作系统错误，EnvironmentError，IOError，WindowsError，socket.error，select.error和mmap.error已合并到OSError中，构造函数可能返回子类
+
+  |    +-- BlockingIOError  # 操作将阻塞对象(e.g. socket)设置为非阻塞操作
+
+  |    +-- ChildProcessError  # 在子进程上的操作失败
+
+  |    +-- ConnectionError  # 与连接相关的异常的基类
+
+  |    |    +-- BrokenPipeError  # 另一端关闭时尝试写入管道或试图在已关闭写入的套接字上写入
+
+  |    |    +-- ConnectionAbortedError  # 连接尝试被对等方中止
+
+  |    |    +-- ConnectionRefusedError  # 连接尝试被对等方拒绝
+
+  |    |    +-- ConnectionResetError    # 连接由对等方重置
+
+  |    +-- FileExistsError  # 创建已存在的文件或目录
+
+  |    +-- FileNotFoundError  # 请求不存在的文件或目录
+
+  |    +-- InterruptedError  # 系统调用被输入信号中断
+
+  |    +-- IsADirectoryError  # 在目录上请求文件操作(例如 os.remove())
+
+  |    +-- NotADirectoryError  # 在不是目录的事物上请求目录操作(例如 os.listdir())
+
+  |    +-- PermissionError  # 尝试在没有足够访问权限的情况下运行操作
+
+  |    +-- ProcessLookupError  # 给定进程不存在
+
+  |    +-- TimeoutError  # 系统函数在系统级别超时
+
+  +-- ReferenceError  # weakref.proxy()函数创建的弱引用试图访问已经垃圾回收了的对象
+
+  +-- RuntimeError  # 在检测到不属于任何其他类别的错误时触发
+
+  |    +-- NotImplementedError  # 在用户定义的基类中，抽象方法要求派生类重写该方法或者正在开发的类指示仍然需要添加实际实现
+
+  |    +-- RecursionError  # 解释器检测到超出最大递归深度
+
+  +-- SyntaxError  # Python 语法错误
+
+  |    +-- IndentationError  # 缩进错误
+
+  |         +-- TabError  # Tab和空格混用
+
+  +-- SystemError  # 解释器发现内部错误
+
+  +-- TypeError  # 操作或函数应用于不适当类型的对象
+
+  +-- ValueError  # 操作或函数接收到具有正确类型但值不合适的参数
+
+  |    +-- UnicodeError  # 发生与Unicode相关的编码或解码错误
+
+  |         +-- UnicodeDecodeError  # Unicode解码错误
+
+  |         +-- UnicodeEncodeError  # Unicode编码错误
+
+  |         +-- UnicodeTranslateError  # Unicode转码错误
+
+  +-- Warning  # 警告的基类
+
+       +-- DeprecationWarning  # 有关已弃用功能的警告的基类
+
+       +-- PendingDeprecationWarning  # 有关不推荐使用功能的警告的基类
+
+       +-- RuntimeWarning  # 有关可疑的运行时行为的警告的基类
+
+       +-- SyntaxWarning  # 关于可疑语法警告的基类
+
+       +-- UserWarning  # 用户代码生成警告的基类
+
+       +-- FutureWarning  # 有关已弃用功能的警告的基类
+
+       +-- ImportWarning  # 关于模块导入时可能出错的警告的基类
+
+       +-- UnicodeWarning  # 与Unicode相关的警告的基类
+
+       +-- BytesWarning  # 与bytes和bytearray相关的警告的基类
+
+       +-- ResourceWarning  # 与资源使用相关的警告的基类。被默认警告过滤器忽略。
+</code></pre></div> <!----> <footer class="page-edit"><!----> <!----></footer> <!----> </main> <div class="valine-wrapper" data-v-5029e45b><div id="valine" data-v-5029e45b></div></div></div> <div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;background-color:rgba(231, 234, 241,.5);display:none;" data-v-cd623d78 data-v-cd623d78><i class="iconfont reco-up" data-v-cd623d78></i></div></div></div></div><div class="global-ui"><SWUpdatePopup></SWUpdatePopup></div></div>
+    <script src="/assets/js/app.aab2e043.js" defer></script><script src="/assets/js/4.a2f23fc0.js" defer></script><script src="/assets/js/1.f41c97e0.js" defer></script><script src="/assets/js/36.a52b02e1.js" defer></script>
+  </body>
+</html>

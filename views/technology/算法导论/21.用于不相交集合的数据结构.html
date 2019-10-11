@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>用于不相交集合的数据结构 | Song Di</title>
+    <meta name="description" content="Learning Something .">
+    <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.32abe013.css" as="style"><link rel="preload" href="/assets/js/app.aab2e043.js" as="script"><link rel="preload" href="/assets/js/4.a2f23fc0.js" as="script"><link rel="preload" href="/assets/js/1.f41c97e0.js" as="script"><link rel="preload" href="/assets/js/38.3b48abf2.js" as="script"><link rel="prefetch" href="/assets/js/10.d91ec914.js"><link rel="prefetch" href="/assets/js/11.550449f0.js"><link rel="prefetch" href="/assets/js/12.25635e0d.js"><link rel="prefetch" href="/assets/js/13.8d53457a.js"><link rel="prefetch" href="/assets/js/14.1a52212c.js"><link rel="prefetch" href="/assets/js/15.568ec84d.js"><link rel="prefetch" href="/assets/js/16.b7e3e311.js"><link rel="prefetch" href="/assets/js/17.917cdf1c.js"><link rel="prefetch" href="/assets/js/18.358f4651.js"><link rel="prefetch" href="/assets/js/19.964d1b37.js"><link rel="prefetch" href="/assets/js/20.3cb39a62.js"><link rel="prefetch" href="/assets/js/21.dd03c019.js"><link rel="prefetch" href="/assets/js/22.04f00787.js"><link rel="prefetch" href="/assets/js/23.69030ecf.js"><link rel="prefetch" href="/assets/js/24.6f80e0b7.js"><link rel="prefetch" href="/assets/js/25.4efe4c2c.js"><link rel="prefetch" href="/assets/js/26.f3c1027b.js"><link rel="prefetch" href="/assets/js/27.ada57397.js"><link rel="prefetch" href="/assets/js/28.e433c184.js"><link rel="prefetch" href="/assets/js/29.41956688.js"><link rel="prefetch" href="/assets/js/30.f8aea55c.js"><link rel="prefetch" href="/assets/js/31.ba3a4a42.js"><link rel="prefetch" href="/assets/js/32.ef5442ac.js"><link rel="prefetch" href="/assets/js/33.abb3d556.js"><link rel="prefetch" href="/assets/js/34.c9d24849.js"><link rel="prefetch" href="/assets/js/35.fcde76ec.js"><link rel="prefetch" href="/assets/js/36.a52b02e1.js"><link rel="prefetch" href="/assets/js/37.a9af78bb.js"><link rel="prefetch" href="/assets/js/39.2245d9e9.js"><link rel="prefetch" href="/assets/js/40.1dbeb94d.js"><link rel="prefetch" href="/assets/js/41.71eb90be.js"><link rel="prefetch" href="/assets/js/42.aa5924d8.js"><link rel="prefetch" href="/assets/js/43.1db5ea99.js"><link rel="prefetch" href="/assets/js/44.f50e971f.js"><link rel="prefetch" href="/assets/js/45.eb7bd2fd.js"><link rel="prefetch" href="/assets/js/5.4cc2d397.js"><link rel="prefetch" href="/assets/js/6.847b890c.js"><link rel="prefetch" href="/assets/js/7.f77301b3.js"><link rel="prefetch" href="/assets/js/8.4130173d.js"><link rel="prefetch" href="/assets/js/9.a7dc4e78.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.8b30b4f0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.32abe013.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container"><div><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/head.png" alt="Song Di" class="logo"> <span class="site-name">Song Di</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><!----> <div class="dark-theme-options toggle-option"><label for="dark-theme-toggle">Enable Dark Theme?</label> <input id="dark-theme-toggle" type="checkbox" checked="checked"></div></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/category/论文笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/category/论文排版.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文排版
+</a></li><li class="dropdown-item"><!----> <a href="/category/读书.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书
+</a></li><li class="dropdown-item"><!----> <a href="/category/电影.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/category/美剧.html" class="nav-link"><i class="iconfont undefined"></i>
+  美剧
+</a></li><li class="dropdown-item"><!----> <a href="/category/编程语言.html" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/category/leetcode.html" class="nav-link"><i class="iconfont undefined"></i>
+  leetcode
+</a></li><li class="dropdown-item"><!----> <a href="/category/启发式算法.html" class="nav-link"><i class="iconfont undefined"></i>
+  启发式算法
+</a></li><li class="dropdown-item"><!----> <a href="/category/算法导论.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法导论
+</a></li><li class="dropdown-item"><!----> <a href="/category/外语.html" class="nav-link"><i class="iconfont undefined"></i>
+  外语
+</a></li><li class="dropdown-item"><!----> <a href="/category/经验.html" class="nav-link"><i class="iconfont undefined"></i>
+  经验
+</a></li><li class="dropdown-item"><!----> <a href="/category/面试.html" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/category/课程笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  课程笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  归档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TINADD" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/tina-67-56/activities" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/category/论文笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/category/论文排版.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文排版
+</a></li><li class="dropdown-item"><!----> <a href="/category/读书.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书
+</a></li><li class="dropdown-item"><!----> <a href="/category/电影.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/category/美剧.html" class="nav-link"><i class="iconfont undefined"></i>
+  美剧
+</a></li><li class="dropdown-item"><!----> <a href="/category/编程语言.html" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/category/leetcode.html" class="nav-link"><i class="iconfont undefined"></i>
+  leetcode
+</a></li><li class="dropdown-item"><!----> <a href="/category/启发式算法.html" class="nav-link"><i class="iconfont undefined"></i>
+  启发式算法
+</a></li><li class="dropdown-item"><!----> <a href="/category/算法导论.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法导论
+</a></li><li class="dropdown-item"><!----> <a href="/category/外语.html" class="nav-link"><i class="iconfont undefined"></i>
+  外语
+</a></li><li class="dropdown-item"><!----> <a href="/category/经验.html" class="nav-link"><i class="iconfont undefined"></i>
+  经验
+</a></li><li class="dropdown-item"><!----> <a href="/category/面试.html" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/category/课程笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  课程笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  归档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TINADD" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/tina-67-56/activities" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>用于不相交集合的数据结构</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/technology/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/21.%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html#不相交集合的操作" class="sidebar-link">不相交集合的操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/technology/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/21.%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html#应用" class="sidebar-link">应用</a></li></ul></li><li><a href="/views/technology/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/21.%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html#不相交集合的链表表示" class="sidebar-link">不相交集合的链表表示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/views/technology/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/21.%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html#一种加权合并的启发式策略" class="sidebar-link">一种加权合并的启发式策略</a></li><li class="sidebar-sub-header"><a href="/views/technology/%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA/21.%E7%94%A8%E4%BA%8E%E4%B8%8D%E7%9B%B8%E4%BA%A4%E9%9B%86%E5%90%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html#不相交集合森林" class="sidebar-link">不相交集合森林</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page reco-hide"> <div class="page-title"><h1>用于不相交集合的数据结构</h1> <hr> <div data-v-362e684e><i class="iconfont reco-account" data-v-362e684e><span data-v-362e684e>Candy</span></i> <i class="iconfont reco-date" data-v-362e684e><span data-v-362e684e>2019-9-12</span></i> <!----> <i class="iconfont reco-tag tags" data-v-362e684e><span class="tag-item" data-v-362e684e>
+      数据结构
+    </span></i></div></div> <div class="content__default"><p>一些应用涉及将<strong>n个不同的元素</strong>分成<strong>一组不相交的集合</strong>，</p> <p>这些应用经常涉及两个操作：寻找给定元素的唯一集合、合并两个集合</p> <h2 id="不相交集合的操作"><a href="#不相交集合的操作" aria-hidden="true" class="header-anchor">#</a> 不相交集合的操作</h2> <p>一个<strong>不相交集合数据结构</strong>（disjoint-set data structure）维护了一个不相交动态的集合$S = {S_1,S_2,...,S_3}$。每个集合都有一个元素作为该集合的<strong>代表</strong>来标识该集合。</p> <p>这里用一个对象表示集合中的每个元素。设$x$表示一个对象，则该数据结构应该支持以下三个操作：</p> <p>$MAKE-SET(x)😒 建立一个新的<strong>集合</strong>， 它的唯一成员（所以也是代表）为$x$ 。因为各个集合是不相交的，所以$x$不会出现在别的集合中。</p> <p>$UNION(x,y):$将包含$x$和$y$的两个动态集合（表示为$S_x$和$S_y$）合并成为一个新的集合。虽然$UNION$的很多实现中特别选择$S_x$或$S_y$的代表作为新的代表，但是结果集的代表可以是并集中的任何一个元素。在合并时，常规操作是 把<strong>其中一个集合的元素放入另一个集合中</strong>。</p> <p>$FIND-SET(x):$返回一个指针，这个指针指向包含$x$的集合的代表。</p> <p>这里用两个参数$n、m$来分析不相交集合数据结构的运行时间，假设$n$个$MAKE-SET$操作总是最先执行的n个操作：$n$表示$MAKE-SET$的操作次数；$m$表示$MAKE-SET、UNION、FIND-SET$操作的总次数。</p> <h3 id="应用"><a href="#应用" aria-hidden="true" class="header-anchor">#</a> 应用</h3> <p>不相交集合数据结构的应用之一就是：确定无向图的连通分量。
+ps. 在计算连通分量的算法实现中，图和不相交集数据结构的表示需要相互引用。图中的每个顶点都应包含一个指向与之对应的不相交集合对象的指针；反之亦然。
+//使用不相交集合操作来计算一个图的连通分量
+CONNECTED-COMPONENTS(G)
+for each vertex v ∈G.V
+MAKE-SET(V)
+for each edge(u,v)∈G.E
+if FIND-SET(u) \neq FIND-SET(v)
+UNION(u,v)</p> <p>//判断两个顶点是否在同一个连通分量
+SAME-COMPONENT(u,v)
+if FIND-SET(u) \eq FIND-SET(v)
+return TRUE
+else return FALSE</p> <h2 id="不相交集合的链表表示"><a href="#不相交集合的链表表示" aria-hidden="true" class="header-anchor">#</a> 不相交集合的链表表示</h2> <p>每个集合用一个自己的链表来表示。每个集合的对象包含$head$属性和$tail$属性，链表中的每个对象都包含一个<strong>集合成员</strong>（结点）、一个指向链表中<strong>下一个对象的指针和</strong>一个<strong>指回到集合对象的指针</strong>。</p> <p>在每个链表中，对象的顺序任意。代表是链表中第一个对象的集合成员。</p> <p>用这中链表表示，$MAKE-SET$操作和$FIND-SET$操作是非常方便的，只需要$O(1)$的时间。</p> <p>$MAKE-SET(x)$只需要创建一个只有$x$对象的新的链表。</p> <p>$FIND-SET(x)$只需沿着$x$对象的返回指针返回到集合对象，然后返回集合对象，然后返回$head$指向对象的成员。</p> <p>在最坏的情况下，上面给出的$UNION$过程的每次调用平均需要$O(n)$的时间，因为需要把一个较长的表拼接到一个较短的表上，此时必须对较长表的每个成员更新其指向集合对象的指针。现在换一种策略：</p> <h3 id="一种加权合并的启发式策略"><a href="#一种加权合并的启发式策略" aria-hidden="true" class="header-anchor">#</a> 一种加权合并的启发式策略</h3> <p>假设每个表中还包含了表的长度，以及拼接次序可以任意，总是把饺短的表拼接到较长的表中。使用这种简单的<strong>加权合并启发式策略</strong>，如果两个集合都有$\Omega(n)$个成员，则单个的$UNION$操作仍然需要$\Omega(n)$的时间。下面的定理表明，一个具有$m$个$MAKE-SET、UNION、FIND-SET$操作的序列（其中有$n$个是$MAKE-SET$操作）需要耗费$O(m+n\lg n)$的时间。</p> <p>证明思路：</p> <p>因为m个操作至少需要$O(m)$的运行时间，对于每个对象，$MAKE-SET$和$find-set$操作均为$O(1)$时间，关键在于$UNION$的时间。每次合并时，都是将元素个数较少的链表拼接在元素较多的链表后面，因为要更新$x$所在集合的代表对象，所以x所在的集合一定是含有较少元素的链表。对于$x$所在集合元素的个数num,初始num=1,合并后的结果集至少为2，依次类推，当num=2时，合并后的结果集至少为4,...，当合并后的结果集为$n$时，num=$\lg n$，所以$x$最多被更新$\lg n$次 。n个对象最多被更新$n\lg n$次。所以总的操作时间为$O(m+n\lg n)$</p> <h3 id="不相交集合森林"><a href="#不相交集合森林" aria-hidden="true" class="header-anchor">#</a> 不相交集合森林</h3> <p>在一个不相交集合的更快实现中，我们使用<strong>有根树</strong>来表示集合，树中每个结点包含一个成员（表示连通分量中的一个结点），每棵树代表一个集合。在一个<strong>不相交集合森林</strong>中，每个<strong>成员仅指向它的父结点</strong>。每棵树的<strong>根包含集合的代表</strong>，并且是<strong>自己的父结点</strong>。</p> <p>执行不相交集合的三种操作：</p> <p>$MAKE-SET$简单的创建一颗只有一个结点的树。</p> <p>$FIND-SET$操作通过沿着指向父结点的指针找到树的根。这一通向根节点的简单路径上所访问的结点构成了<strong>查找路径</strong>。</p> <p>$UNION$操作使得一棵树的根指向另外一棵树的根。</p> <h4 id="改进运行时间的启发式策略"><a href="#改进运行时间的启发式策略" aria-hidden="true" class="header-anchor">#</a> 改进运行时间的启发式策略</h4> <p>一个包含$n-1$个$UNION$操作的序列可以构造出一颗恰好含有$n$个结点的线性链的树。然而，通过使用<strong>两种启发式策略</strong>可以得到一个几乎与总的操作数$m$呈线性关系的运行时间。</p> <p>启发式策略一：<strong>按秩合并</strong>（<strong>union by rank</strong>）</p> <p>类似于链表中使用的加权合并启发式策略，使用较少结点的树的根指向具有较多结点的树的根。对于每个结点，维护一个$秩$，它表示该结点高度的一个上界。在使用按秩合并策略的$UNION$操作中，通常将具有较小秩的根指向具有较大秩的根。</p> <p>启发式策略二：<strong>路径压缩</strong>（<strong>path compression</strong>）。</p> <h4 id="实现不相交集合森林的伪代码"><a href="#实现不相交集合森林的伪代码" aria-hidden="true" class="header-anchor">#</a> 实现不相交集合森林的伪代码</h4> <p>为了使用按秩合并的启发式策略实现一个不相交集合森林，对于每个结点$x$，维护一个整数值$x.rank$，表示$x$的高度（<strong>从$x$到某一后代叶结点的最长简单路径上边的数目</strong>）的一个上界。当$MAKE-SET$创建一个单元素集合时，这个树上的单结点有一个为0的初始秩。每一个$FIND-SET$操作不改变任何秩。$UNION$操作有两种情况，取决于两棵树的根是否具有相同的秩。如果秩不同，较大秩的根成为较小秩的根的父结点，但秩本身保持不变；如果秩相同，任选两个根的一个作为父结点，使它的秩加1。</p> <p>伪代码：$x.p$表示$x$的父结点，
+$MAKE-SET(X)$
+x.p = x
+x.rank = 0
+$UNION(x,y)$
+$LINK(FIND-SET(x),FIND-SET(y))$
+$LINK(x,y)$
+if x.rank &gt; y.rank
+y.p = x
+else
+x.p = y
+if x.rank == y.rank
+y.rank = y.rank+1
+//带有<strong>路径压缩</strong>的$FIND-SET$过程
+$FIND-SET(x)$
+if x \neq x.p
+x.p = $FIND-SET(x.p)$
+return x.p
+$FIND-SET$过程是一种<strong>两趟方法(two-pass method)</strong>，第一趟沿着查找路径向上直到找到根，当递归回溯时，第二趟沿着搜索树向下更新每个结点，使其直接指向根。</p> <h4 id="启发式策略对运行时间的影响"><a href="#启发式策略对运行时间的影响" aria-hidden="true" class="header-anchor">#</a> 启发式策略对运行时间的影响</h4> <p>如果<strong>单独使用按秩合并或路径压缩</strong>，它们每一个都能<strong>改善</strong>不相交集合森林上操作的<strong>运行时间</strong>，一起使用，效果更好。</p> <h4 id="带路径压缩的按秩合并的分析"><a href="#带路径压缩的按秩合并的分析" aria-hidden="true" class="header-anchor">#</a> 带路径压缩的按秩合并的分析</h4> <p>按秩合并，总的运行时间为$O(m\lg n)$，因为总的操作m个，每个对象需要最多$lg n$次，所以总的运行时间为$O(m+nlgn)$，因为m大于n，所以总的运行时间肯定小于$O(m+mlgn)$=$O(mlgn)$</p> <p>当同时使用<strong>按秩合并</strong>和<strong>路径压缩</strong>时，最坏情况的运行时间为$O(m\alpha(n))$，这里的$\alpha(n)$是一个增长非常慢的函数。在任何一个可以想得到的不相交集合数据结构的应用中，都有$\alpha(n)\leq4$，所以我们可以认为在所有实际应用中，其运行时间<strong>与$m$呈线性关系</strong>。严格的说是<strong>超线性</strong>的。</p></div> <!----> <footer class="page-edit"><!----> <!----></footer> <!----> </main> <div class="valine-wrapper" data-v-5029e45b><div id="valine" data-v-5029e45b></div></div></div> <div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;background-color:rgba(231, 234, 241,.5);display:none;" data-v-cd623d78 data-v-cd623d78><i class="iconfont reco-up" data-v-cd623d78></i></div></div></div></div><div class="global-ui"><SWUpdatePopup></SWUpdatePopup></div></div>
+    <script src="/assets/js/app.aab2e043.js" defer></script><script src="/assets/js/4.a2f23fc0.js" defer></script><script src="/assets/js/1.f41c97e0.js" defer></script><script src="/assets/js/38.3b48abf2.js" defer></script>
+  </body>
+</html>

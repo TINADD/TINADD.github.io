@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>python 函数传参 | Song Di</title>
+    <meta name="description" content="Learning Something .">
+    <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.32abe013.css" as="style"><link rel="preload" href="/assets/js/app.aab2e043.js" as="script"><link rel="preload" href="/assets/js/4.a2f23fc0.js" as="script"><link rel="preload" href="/assets/js/1.f41c97e0.js" as="script"><link rel="preload" href="/assets/js/35.fcde76ec.js" as="script"><link rel="prefetch" href="/assets/js/10.d91ec914.js"><link rel="prefetch" href="/assets/js/11.550449f0.js"><link rel="prefetch" href="/assets/js/12.25635e0d.js"><link rel="prefetch" href="/assets/js/13.8d53457a.js"><link rel="prefetch" href="/assets/js/14.1a52212c.js"><link rel="prefetch" href="/assets/js/15.568ec84d.js"><link rel="prefetch" href="/assets/js/16.b7e3e311.js"><link rel="prefetch" href="/assets/js/17.917cdf1c.js"><link rel="prefetch" href="/assets/js/18.358f4651.js"><link rel="prefetch" href="/assets/js/19.964d1b37.js"><link rel="prefetch" href="/assets/js/20.3cb39a62.js"><link rel="prefetch" href="/assets/js/21.dd03c019.js"><link rel="prefetch" href="/assets/js/22.04f00787.js"><link rel="prefetch" href="/assets/js/23.69030ecf.js"><link rel="prefetch" href="/assets/js/24.6f80e0b7.js"><link rel="prefetch" href="/assets/js/25.4efe4c2c.js"><link rel="prefetch" href="/assets/js/26.f3c1027b.js"><link rel="prefetch" href="/assets/js/27.ada57397.js"><link rel="prefetch" href="/assets/js/28.e433c184.js"><link rel="prefetch" href="/assets/js/29.41956688.js"><link rel="prefetch" href="/assets/js/30.f8aea55c.js"><link rel="prefetch" href="/assets/js/31.ba3a4a42.js"><link rel="prefetch" href="/assets/js/32.ef5442ac.js"><link rel="prefetch" href="/assets/js/33.abb3d556.js"><link rel="prefetch" href="/assets/js/34.c9d24849.js"><link rel="prefetch" href="/assets/js/36.a52b02e1.js"><link rel="prefetch" href="/assets/js/37.a9af78bb.js"><link rel="prefetch" href="/assets/js/38.3b48abf2.js"><link rel="prefetch" href="/assets/js/39.2245d9e9.js"><link rel="prefetch" href="/assets/js/40.1dbeb94d.js"><link rel="prefetch" href="/assets/js/41.71eb90be.js"><link rel="prefetch" href="/assets/js/42.aa5924d8.js"><link rel="prefetch" href="/assets/js/43.1db5ea99.js"><link rel="prefetch" href="/assets/js/44.f50e971f.js"><link rel="prefetch" href="/assets/js/45.eb7bd2fd.js"><link rel="prefetch" href="/assets/js/5.4cc2d397.js"><link rel="prefetch" href="/assets/js/6.847b890c.js"><link rel="prefetch" href="/assets/js/7.f77301b3.js"><link rel="prefetch" href="/assets/js/8.4130173d.js"><link rel="prefetch" href="/assets/js/9.a7dc4e78.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.8b30b4f0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.32abe013.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container"><div><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/head.png" alt="Song Di" class="logo"> <span class="site-name">Song Di</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><!----> <div class="dark-theme-options toggle-option"><label for="dark-theme-toggle">Enable Dark Theme?</label> <input id="dark-theme-toggle" type="checkbox" checked="checked"></div></div></div></div> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/category/论文笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/category/论文排版.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文排版
+</a></li><li class="dropdown-item"><!----> <a href="/category/读书.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书
+</a></li><li class="dropdown-item"><!----> <a href="/category/电影.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/category/美剧.html" class="nav-link"><i class="iconfont undefined"></i>
+  美剧
+</a></li><li class="dropdown-item"><!----> <a href="/category/编程语言.html" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/category/leetcode.html" class="nav-link"><i class="iconfont undefined"></i>
+  leetcode
+</a></li><li class="dropdown-item"><!----> <a href="/category/启发式算法.html" class="nav-link"><i class="iconfont undefined"></i>
+  启发式算法
+</a></li><li class="dropdown-item"><!----> <a href="/category/算法导论.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法导论
+</a></li><li class="dropdown-item"><!----> <a href="/category/外语.html" class="nav-link"><i class="iconfont undefined"></i>
+  外语
+</a></li><li class="dropdown-item"><!----> <a href="/category/经验.html" class="nav-link"><i class="iconfont undefined"></i>
+  经验
+</a></li><li class="dropdown-item"><!----> <a href="/category/面试.html" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/category/课程笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  课程笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  归档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TINADD" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/tina-67-56/activities" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/category/论文笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文笔记
+</a></li><li class="dropdown-item"><!----> <a href="/category/论文排版.html" class="nav-link"><i class="iconfont undefined"></i>
+  论文排版
+</a></li><li class="dropdown-item"><!----> <a href="/category/读书.html" class="nav-link"><i class="iconfont undefined"></i>
+  读书
+</a></li><li class="dropdown-item"><!----> <a href="/category/电影.html" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/category/美剧.html" class="nav-link"><i class="iconfont undefined"></i>
+  美剧
+</a></li><li class="dropdown-item"><!----> <a href="/category/编程语言.html" class="nav-link"><i class="iconfont undefined"></i>
+  编程语言
+</a></li><li class="dropdown-item"><!----> <a href="/category/leetcode.html" class="nav-link"><i class="iconfont undefined"></i>
+  leetcode
+</a></li><li class="dropdown-item"><!----> <a href="/category/启发式算法.html" class="nav-link"><i class="iconfont undefined"></i>
+  启发式算法
+</a></li><li class="dropdown-item"><!----> <a href="/category/算法导论.html" class="nav-link"><i class="iconfont undefined"></i>
+  算法导论
+</a></li><li class="dropdown-item"><!----> <a href="/category/外语.html" class="nav-link"><i class="iconfont undefined"></i>
+  外语
+</a></li><li class="dropdown-item"><!----> <a href="/category/经验.html" class="nav-link"><i class="iconfont undefined"></i>
+  经验
+</a></li><li class="dropdown-item"><!----> <a href="/category/面试.html" class="nav-link"><i class="iconfont undefined"></i>
+  面试
+</a></li><li class="dropdown-item"><!----> <a href="/category/课程笔记.html" class="nav-link"><i class="iconfont undefined"></i>
+  课程笔记
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/timeLine/" class="nav-link"><i class="iconfont reco-date"></i>
+  归档
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      联系
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/TINADD" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/cd674a19515e" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.zhihu.com/people/tina-67-56/activities" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-zhihu"></i>
+  知乎
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>python 函数传参</span> <!----></p> <!----></section></li></ul> </aside> <div><main class="page reco-hide"> <div class="page-title"><h1>python 函数传参</h1> <hr> <div data-v-362e684e><i class="iconfont reco-account" data-v-362e684e><span data-v-362e684e>Candy</span></i> <i class="iconfont reco-date" data-v-362e684e><span data-v-362e684e>2019-8-28</span></i> <!----> <i class="iconfont reco-tag tags" data-v-362e684e><span class="tag-item" data-v-362e684e>
+      python
+    </span></i></div></div> <div class="content__default"><center><h4 style="color:red;">sleep()函数：</h4></center>
+描述：
+	Python time sleep() 函数推迟调用线程的运行，可通过参数secs指秒数，表示进程挂起的时间。
+用法：
+time.sleep(t)  没有返回值
+参数：
+t--推迟执行的秒数
+</div> <!----> <footer class="page-edit"><!----> <!----></footer> <!----> </main> <div class="valine-wrapper" data-v-5029e45b><div id="valine" data-v-5029e45b></div></div></div> <div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;background-color:rgba(231, 234, 241,.5);display:none;" data-v-cd623d78 data-v-cd623d78><i class="iconfont reco-up" data-v-cd623d78></i></div></div></div></div><div class="global-ui"><SWUpdatePopup></SWUpdatePopup></div></div>
+    <script src="/assets/js/app.aab2e043.js" defer></script><script src="/assets/js/4.a2f23fc0.js" defer></script><script src="/assets/js/1.f41c97e0.js" defer></script><script src="/assets/js/35.fcde76ec.js" defer></script>
+  </body>
+</html>
